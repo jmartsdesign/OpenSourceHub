@@ -6,7 +6,7 @@
     "website": "https://www.freecad.org",
     "icon": "fa-solid fa-compass-drafting",
     "tags": ["cad", "paramétrico", "engenharia"]
-  },
+  }
   {
     "name": "Blender",
     "category": "3D",
@@ -15,7 +15,7 @@
     "website": "https://www.blender.org",
     "icon": "fa-solid fa-cube",
     "tags": ["3d", "animação", "render"]
-  },
+  }
   {
     "name": "Krita",
     "category": "Ilustração",
@@ -24,7 +24,7 @@
     "website": "https://krita.org",
     "icon": "fa-solid fa-paint-brush",
     "tags": ["ilustração", "pintura", "raster"]
-  },
+  }
   {
     "name": "Inkscape",
     "category": "Design",
@@ -33,7 +33,7 @@
     "website": "https://inkscape.org",
     "icon": "fa-solid fa-pen-nib",
     "tags": ["vetor", "design", "svg"]
-  },
+  }
   {
     "name": "LibreCAD",
     "category": "CAD",
@@ -42,7 +42,7 @@
     "website": "https://librecad.org",
     "icon": "fa-solid fa-ruler-combined",
     "tags": ["cad", "2d", "desenho técnico"]
-  },
+  }
   {
     "name": "Godot Engine",
     "category": "3D",
@@ -51,7 +51,7 @@
     "website": "https://godotengine.org",
     "icon": "fa-solid fa-gamepad",
     "tags": ["jogos", "3d", "motor"]
-  },
+  }
     {
     "name": "IngeTrazo",
     "category": "CAD",
