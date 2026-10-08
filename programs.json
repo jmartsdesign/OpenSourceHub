@@ -1,4 +1,3 @@
-[
   {
     "name": "FreeCAD",
     "category": "CAD",
@@ -62,4 +61,3 @@
     "icon": "fa-solid fa-compass-drafting",
     "tags": ["cad", "paramétrico", "engenharia", "3d"]
   }
-]
