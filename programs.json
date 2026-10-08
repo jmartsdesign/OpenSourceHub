@@ -1,0 +1,56 @@
+[
+  {
+    "name": "FreeCAD",
+    "category": "CAD",
+    "description": "Modelador paramétrico 3D de código aberto feito primariamente para design de objetos da vida real.",
+    "url": "https://github.com/FreeCAD/FreeCAD",
+    "website": "https://www.freecad.org",
+    "icon": "fa-solid fa-compass-drafting",
+    "tags": ["cad", "paramétrico", "engenharia"]
+  },
+  {
+    "name": "Blender",
+    "category": "3D",
+    "description": "Suíte de criação 3D gratuita e de código aberto. Suporta modelagem, rigging, animação, simulação e renderização.",
+    "url": "https://github.com/blender/blender",
+    "website": "https://www.blender.org",
+    "icon": "fa-solid fa-cube",
+    "tags": ["3d", "animação", "render"]
+  },
+  {
+    "name": "Krita",
+    "category": "Ilustração",
+    "description": "Software de pintura digital e ilustração profissional criado por artistas para artistas.",
+    "url": "https://github.com/KritaORG/krita",
+    "website": "https://krita.org",
+    "icon": "fa-solid fa-paint-brush",
+    "tags": ["ilustração", "pintura", "raster"]
+  },
+  {
+    "name": "Inkscape",
+    "category": "Design",
+    "description": "Editor de gráficos vetoriais profissional para Linux, Windows e macOS.",
+    "url": "https://gitlab.com/inkscape/inkscape",
+    "website": "https://inkscape.org",
+    "icon": "fa-solid fa-pen-nib",
+    "tags": ["vetor", "design", "svg"]
+  },
+  {
+    "name": "LibreCAD",
+    "category": "CAD",
+    "description": "Aplicação CAD 2D totalmente gratuita para projetos técnicos e arquitetura leve.",
+    "url": "https://github.com/LibreCAD/LibreCAD",
+    "website": "https://librecad.org",
+    "icon": "fa-solid fa-ruler-combined",
+    "tags": ["cad", "2d", "desenho técnico"]
+  },
+  {
+    "name": "Godot Engine",
+    "category": "3D",
+    "description": "Motor de jogos 2D e 3D de código aberto com interface integrada rica para criação de assets.",
+    "url": "https://github.com/godotengine/godot",
+    "website": "https://godotengine.org",
+    "icon": "fa-solid fa-gamepad",
+    "tags": ["jogos", "3d", "motor"]
+  }
+]
