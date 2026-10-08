@@ -52,5 +52,14 @@
     "website": "https://godotengine.org",
     "icon": "fa-solid fa-gamepad",
     "tags": ["jogos", "3d", "motor"]
+  },
+    {
+    "name": "IngeTrazo",
+    "category": "CAD",
+    "description": "Desenhe como se fosse à mão. Modelador 3D de código aberto para arquitetura, engenharia e design.",
+    "url": "https://github.com/ingelibre/ingetrazo",
+    "website": "https://ingetrazo.com/en/",
+    "icon": "fa-solid fa-compass-drafting",
+    "tags": ["cad", "paramétrico", "engenharia", "3d"]
   }
 ]
