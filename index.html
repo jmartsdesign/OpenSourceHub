@@ -213,14 +213,22 @@
             errorState.classList.add('hidden');
 
             try {
-                // Caminho inteligente compatível com subpastas do GitHub Pages
-                const response = await fetch('./programs.json?v=' + new Date().getTime());
+                // Tenta carregar o programs.json com caminho absoluto relativo seguro
+                const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+                const jsonUrl = basePath + '/programs.json?v=' + new Date().getTime();
+                
+                const response = await fetch(jsonUrl);
                 if (!response.ok) {
-                    throw new Error('Ficheiro programs.json não encontrado.');
+                    throw new Error('Ficheiro programs.json não encontrado (status ' + response.status + ')');
                 }
-                allPrograms = await response.json();
+                const data = await response.json();
+                if (Array.isArray(data) && data.length > 0) {
+                    allPrograms = data;
+                } else {
+                    throw new Error('Formato JSON inválido ou vazio.');
+                }
             } catch (err) {
-                console.warn('A usar dados de fallback devido a erro no fetch:', err);
+                console.warn('A utilizar dados locais de fallback devido a:', err.message);
                 allPrograms = fallbackPrograms;
             } finally {
                 loadingState.classList.add('hidden');
