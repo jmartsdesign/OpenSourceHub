@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositório Open-Source | CAD, 3D & Design</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+
+    <!-- Header -->
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-tr from-brand-600 to-emerald-400 p-2.5 rounded-xl shadow-lg shadow-brand-500/20">
+                    <i class="fa-solid fa-cube text-white text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg tracking-tight">OpenSource Hub</h1>
+                    <p class="text-xs text-slate-400">Repositório de Ferramentas CAD, 3D & Design</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="#como-adicionar" class="hidden sm:inline-flex items-center space-x-2 text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-2 rounded-lg transition border border-slate-700">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Como Adicionar</span>
+                </a>
+                <button id="themeToggle" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Search Section -->
+    <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full text-center">
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+            Ferramentas Criativas e Técnicas Livres
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base mb-8">
+            Uma curadoria comunitária de softwares de código aberto (Open-Source) para CAD, Modelação 3D, Design Gráfico, Ilustração e Animação.
+        </p>
+
+        <!-- Barra de Pesquisa -->
+        <div class="max-w-xl mx-auto relative">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                <i class="fa-solid fa-search"></i>
+            </div>
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Pesquisar por nome, descrição ou tecnologia (ex: Blender, FreeCAD)..." 
+                class="w-full pl-11 pr-4 py-3.5 bg-slate-900 border border-slate-800 rounded-2xl text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent shadow-xl transition"
+            >
+        </div>
+
+        <!-- Filtros por Categoria -->
+        <div id="categoryFilters" class="flex flex-wrap justify-center gap-2 mt-6">
+            <button data-category="all" class="category-btn px-4 py-2 rounded-xl text-xs font-semibold bg-brand-600 text-white shadow-md transition">
+                Todos
+            </button>
+            <!-- Categorias geradas dinamicamente -->
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-16">
+        <div id="loadingState" class="text-center py-20">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-brand-500 border-t-transparent"></div>
+            <p class="text-slate-400 text-sm mt-3">A carregar repositório de programas...</p>
+        </div>
+
+        <div id="errorState" class="hidden text-center py-20 bg-slate-900/50 rounded-2xl border border-slate-800 p-8 max-w-lg mx-auto">
+            <i class="fa-solid fa-triangle-exclamation text-amber-500 text-3xl mb-3"></i>
+            <h3 class="text-lg font-bold mb-1">Não foi possível carregar os dados</h3>
+            <p class="text-xs text-slate-400 mb-4" id="errorMessage">Certifique-se de que o ficheiro <code class="bg-slate-800 px-1.5 py-0.5 rounded text-brand-400">programs.json</code> existe no seu repositório.</p>
+            <button onclick="loadPrograms()" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-medium rounded-lg transition">Tentar Novamente</button>
+        </div>
+
+        <!-- Grelha de Programas -->
+        <div id="programsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Os cartões serão injetados via JavaScript -->
+        </div>
+
+        <!-- Estado Vazio (Sem resultados) -->
+        <div id="emptyState" class="hidden text-center py-20">
+            <i class="fa-solid fa-folder-open text-slate-600 text-4xl mb-3"></i>
+            <h3 class="text-base font-semibold text-slate-300">Nenhum programa encontrado</h3>
+            <p class="text-xs text-slate-500 mt-1">Tente pesquisar por outro termo ou categoria.</p>
+        </div>
+    </main>
+
+    <!-- Secção Informativa: Como Adicionar via GitHub -->
+    <section id="como-adicionar" class="border-t border-slate-900 bg-slate-900/30 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="p-2 bg-brand-500/10 text-brand-500 rounded-lg">
+                    <i class="fa-solid fa-code-branch text-lg"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold">Como adicionar novos programas</h3>
+                    <p class="text-xs text-slate-400">Simples como editar um ficheiro JSON no GitHub</p>
+                </div>
+            </div>
+            
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl text-sm space-y-4">
+                <p class="text-slate-300">
+                    Este site funciona de forma estática consultando o ficheiro <strong>programs.json</strong> na raiz do seu repositório do GitHub. Para adicionar um novo software, basta seguir estes passos:
+                </p>
+                <ol class="list-decimal list-inside space-y-2 text-slate-400 text-xs sm:text-sm pl-2">
+                    <li>Vá ao seu repositório no GitHub e abra o ficheiro <code class="bg-slate-800 px-1.5 py-0.5 rounded text-brand-400 font-mono">programs.json</code>.</li>
+                    <li>Clique no ícone de lápis (<i class="fa-solid fa-pen text-xs"></i>) para editar.</li>
+                    <li>Adicione um novo bloco no array JSON seguindo o formato abaixo:</li>
+                </ol>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 overflow-x-auto font-mono text-xs text-emerald-400">
+<pre>{
+  "name": "Nome do Programa",
+  "category": "CAD", 
+  "description": "Breve descrição do software open source.",
+  "url": "https://github.com/exemplo/projeto",
+  "website": "https://exemplo.org",
+  "icon": "fa-solid fa-cube",
+  "tags": ["3d", "modelagem"]
+}</pre>
+                </div>
+                <p class="text-xs text-slate-500">
+                    Nota: O campo <code class="text-slate-400">category</code> serve para categorizar automaticamente (ex: CAD, 3D, Design, Ilustração, etc.).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
+        <p>Criado para o GitHub Pages • Feito com código aberto e Tailwind CSS</p>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        let allPrograms = [];
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        // Exemplo fallback integrado caso o ficheiro JSON externo ainda não tenha sido criado pelo utilizador
+        const fallbackPrograms = [
+            {
+                name: "FreeCAD",
+                category: "CAD",
+                description: "Modelador paramétrico 3D de código aberto feito primariamente para design de objetos da vida real.",
+                url: "https://github.com/FreeCAD/FreeCAD",
+                website: "https://www.freecad.org",
+                icon: "fa-solid fa-compass-drafting",
+                tags: ["cad", "paramétrico", "engenharia"]
+            },
+            {
+                name: "Blender",
+                category: "3D",
+                description: "Suíte de criação 3D gratuita e de código aberto. Suporta modelagem, rigging, animação, simulação e renderização.",
+                url: "https://github.com/blender/blender",
+                website: "https://www.blender.org",
+                icon: "fa-solid fa-cube",
+                tags: ["3d", "animação", "render"]
+            },
+            {
+                name: "Krita",
+                category: "Ilustração",
+                description: "Software de pintura digital e ilustração profissional criado por artistas para artistas.",
+                url: "https://github.com/KritaORG/krita",
+                website: "https://krita.org",
+                icon: "fa-solid fa-paint-brush",
+                tags: ["ilustração", "pintura", "raster"]
+            },
+            {
+                name: "Inkscape",
+                category: "Design",
+                description: "Editor de gráficos vetoriais profissional para Linux, Windows e macOS.",
+                url: "https://gitlab.com/inkscape/inkscape",
+                website: "https://inkscape.org",
+                icon: "fa-solid fa-pen-nib",
+                tags: ["vetor", "design", "svg"]
+            },
+            {
+                name: "LibreCAD",
+                category: "CAD",
+                description: "Aplicação CAD 2D totalmente gratuita para projetos técnicos e arquitetura leve.",
+                url: "https://github.com/LibreCAD/LibreCAD",
+                website: "https://librecad.org",
+                icon: "fa-solid fa-ruler-combined",
+                tags: ["cad", "2d", "desenho técnico"]
+            },
+            {
+                name: "Godot Engine",
+                category: "3D",
+                description: "Motor de jogos 2D e 3D de código aberto com interface integrada rica para criação de assets.",
+                url: "https://github.com/godotengine/godot",
+                website: "https://godotengine.org",
+                icon: "fa-solid fa-gamepad",
+                tags: ["jogos", "3d", "motor"]
+            }
+        ];
+
+        async function loadPrograms() {
+            const loadingState = document.getElementById('loadingState');
+            const errorState = document.getElementById('errorState');
+            
+            loadingState.classList.remove('hidden');
+            errorState.classList.add('hidden');
+
+            try {
+                // Tenta carregar o ficheiro programs.json da raiz do repositório
+                const response = await fetch('programs.json');
+                if (!response.ok) {
+                    throw new Error('Ficheiro programs.json não encontrado.');
+                }
+                allPrograms = await response.json();
+            } catch (err) {
+                console.warn('Usando dados de demonstração pois o programs.json não foi detetado diretamente:', err);
+                // Se falhar (ex: a rodar localmente sem servidor HTTP configurado ou antes de criar o json), usa o fallback
+                allPrograms = fallbackPrograms;
+            } finally {
+                loadingState.classList.add('hidden');
+                initCategories();
+                renderPrograms();
+            }
+        }
+
+        function initCategories() {
+            // Extrai categorias únicas automaticamente
+            const categoriesSet = new Set(allPrograms.map(p => p.category || 'Outros'));
+            const categoriesContainer = document.getElementById('categoryFilters');
+            
+            // Mantém o botão "Todos"
+            let html = `<button data-category="all" class="category-btn px-4 py-2 rounded-xl text-xs font-semibold ${currentCategory === 'all' ? 'bg-brand-600 text-white shadow-md' : 'bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800'} transition">Todos</button>`;
+            
+            categoriesSet.forEach(cat => {
+                const isActive = currentCategory === cat;
+                html += `<button data-category="${cat}" class="category-btn px-4 py-2 rounded-xl text-xs font-semibold ${isActive ? 'bg-brand-600 text-white shadow-md' : 'bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800'} transition">${cat}</button>`;
+            });
+
+            categoriesContainer.innerHTML = html;
+
+            // Adiciona listeners aos botões de categoria
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    currentCategory = e.target.getAttribute('data-category');
+                    initCategories(); // Recria para atualizar classes ativas
+                    renderPrograms();
+                });
+            });
+        }
+
+        function renderPrograms() {
+            const grid = document.getElementById('programsGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            // Filtragem por categoria e termo de pesquisa
+            const filtered = allPrograms.filter(prog => {
+                const matchesCategory = currentCategory === 'all' || prog.category === currentCategory;
+                const query = searchQuery.toLowerCase();
+                const matchesSearch = 
+                    (prog.name && prog.name.toLowerCase().includes(query)) ||
+                    (prog.description && prog.description.toLowerCase().includes(query)) ||
+                    (prog.category && prog.category.toLowerCase().includes(query)) ||
+                    (prog.tags && prog.tags.some(t => t.toLowerCase().includes(query)));
+                
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            let html = '';
+            filtered.forEach(prog => {
+                const iconClass = prog.icon || 'fa-solid fa-cube';
+                const tagsHtml = prog.tags ? prog.tags.map(t => `<span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-md border border-slate-700">#${t}</span>`).join('') : '';
+
+                html += `
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 hover:border-slate-700 transition flex flex-col justify-between shadow-xl group">
+                        <div>
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-400 group-hover:scale-105 transition">
+                                        <i class="${iconClass} text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-base text-slate-100">${prog.name}</h3>
+                                        <span class="inline-block px-2 py-0.5 mt-0.5 text-[10px] font-semibold uppercase tracking-wider bg-brand-500/10 text-brand-400 border border-brand-500/20 rounded">
+                                            ${prog.category || 'Geral'}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-400 line-clamp-3 mb-4 leading-relaxed">
+                                ${prog.description}
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1 mb-4">
+                                ${tagsHtml}
+                            </div>
+                            <div class="flex items-center space-x-2 pt-3 border-t border-slate-800">
+                                ${prog.website ? `
+                                    <a href="${prog.website}" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2 px-3 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium rounded-xl transition flex items-center justify-center space-x-1.5">
+                                        <i class="fa-solid fa-globe text-xs"></i>
+                                        <span>Site</span>
+                                    </a>
+                                ` : ''}
+                                ${prog.url ? `
+                                    <a href="${prog.url}" target="_blank" rel="noopener noreferrer" class="flex-1 text-center py-2 px-3 bg-brand-600 hover:bg-brand-500 text-white text-xs font-medium rounded-xl transition flex items-center justify-center space-x-1.5 shadow-lg shadow-brand-600/20">
+                                        <i class="fa-brands fa-github text-xs"></i>
+                                        <span>Repositório</span>
+                                    </a>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            grid.innerHTML = html;
+        }
+
+        // Event listener para a barra de pesquisa
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderPrograms();
+        });
+
+        // Toggle Dark/Light mode simples (mantendo o tema escuro como padrão profissional)
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            const htmlEl = document.documentElement;
+            const iconEl = document.getElementById('themeIcon');
+            if (htmlEl.classList.contains('dark')) {
+                htmlEl.classList.remove('dark');
+                iconEl.className = 'fa-solid fa-sun';
+            } else {
+                htmlEl.classList.add('dark');
+                iconEl.className = 'fa-solid fa-moon';
+            }
+        });
+
+        // Inicializar aplicação ao carregar a página
+        window.onload = () => {
+            loadPrograms();
+        };
+    </script>
+</body>
+</html>
