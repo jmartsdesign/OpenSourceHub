@@ -1,0 +1,9 @@
+{
+  "name": "Nome do Programa",
+  "category": "CAD", 
+  "description": "Breve descrição do software open source.",
+  "url": "https://github.com/exemplo/projeto",
+  "website": "https://exemplo.org",
+  "icon": "fa-solid fa-cube",
+  "tags": ["3d", "modelagem"]
+}
