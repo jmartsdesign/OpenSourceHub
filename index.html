@@ -84,7 +84,6 @@
             <button data-category="all" class="category-btn px-4 py-2 rounded-xl text-xs font-semibold bg-brand-600 text-white shadow-md transition">
                 Todos
             </button>
-            <!-- Categorias geradas dinamicamente -->
         </div>
     </section>
 
@@ -103,9 +102,7 @@
         </div>
 
         <!-- Grelha de Programas -->
-        <div id="programsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Os cartões serão injetados via JavaScript -->
-        </div>
+        <div id="programsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
         <!-- Estado Vazio (Sem resultados) -->
         <div id="emptyState" class="hidden text-center py-20">
@@ -115,7 +112,7 @@
         </div>
     </main>
 
-    <!-- Secção Informativa: Como Adicionar via GitHub -->
+    <!-- Secção Informativa -->
     <section id="como-adicionar" class="border-t border-slate-900 bg-slate-900/30 py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto">
             <div class="flex items-center space-x-3 mb-6">
@@ -130,27 +127,12 @@
             
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl text-sm space-y-4">
                 <p class="text-slate-300">
-                    Este site funciona de forma estática consultando o ficheiro <strong>programs.json</strong> na raiz do seu repositório do GitHub. Para adicionar um novo software, basta seguir estes passos:
+                    Este site lê diretamente o ficheiro <strong>programs.json</strong> na raiz do seu repositório. Para adicionar um novo software:
                 </p>
                 <ol class="list-decimal list-inside space-y-2 text-slate-400 text-xs sm:text-sm pl-2">
                     <li>Vá ao seu repositório no GitHub e abra o ficheiro <code class="bg-slate-800 px-1.5 py-0.5 rounded text-brand-400 font-mono">programs.json</code>.</li>
-                    <li>Clique no ícone de lápis (<i class="fa-solid fa-pen text-xs"></i>) para editar.</li>
-                    <li>Adicione um novo bloco no array JSON seguindo o formato abaixo:</li>
+                    <li>Clique no ícone de lápis para editar e adicione o seu bloco JSON.</li>
                 </ol>
-                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 overflow-x-auto font-mono text-xs text-emerald-400">
-<pre>{
-  "name": "Nome do Programa",
-  "category": "CAD", 
-  "description": "Breve descrição do software open source.",
-  "url": "https://github.com/exemplo/projeto",
-  "website": "https://exemplo.org",
-  "icon": "fa-solid fa-cube",
-  "tags": ["3d", "modelagem"]
-}</pre>
-                </div>
-                <p class="text-xs text-slate-500">
-                    Nota: O campo <code class="text-slate-400">category</code> serve para categorizar automaticamente (ex: CAD, 3D, Design, Ilustração, etc.).
-                </p>
             </div>
         </div>
     </section>
@@ -166,7 +148,6 @@
         let currentCategory = 'all';
         let searchQuery = '';
 
-        // Exemplo fallback integrado caso o ficheiro JSON externo ainda não tenha sido criado pelo utilizador
         const fallbackPrograms = [
             {
                 name: "FreeCAD",
@@ -232,15 +213,14 @@
             errorState.classList.add('hidden');
 
             try {
-                // Tenta carregar o ficheiro programs.json da raiz do repositório
-                const response = await fetch('programs.json');
+                // Caminho inteligente compatível com subpastas do GitHub Pages
+                const response = await fetch('./programs.json?v=' + new Date().getTime());
                 if (!response.ok) {
                     throw new Error('Ficheiro programs.json não encontrado.');
                 }
                 allPrograms = await response.json();
             } catch (err) {
-                console.warn('Usando dados de demonstração pois o programs.json não foi detetado diretamente:', err);
-                // Se falhar (ex: a rodar localmente sem servidor HTTP configurado ou antes de criar o json), usa o fallback
+                console.warn('A usar dados de fallback devido a erro no fetch:', err);
                 allPrograms = fallbackPrograms;
             } finally {
                 loadingState.classList.add('hidden');
@@ -250,11 +230,9 @@
         }
 
         function initCategories() {
-            // Extrai categorias únicas automaticamente
             const categoriesSet = new Set(allPrograms.map(p => p.category || 'Outros'));
             const categoriesContainer = document.getElementById('categoryFilters');
             
-            // Mantém o botão "Todos"
             let html = `<button data-category="all" class="category-btn px-4 py-2 rounded-xl text-xs font-semibold ${currentCategory === 'all' ? 'bg-brand-600 text-white shadow-md' : 'bg-slate-900 border border-slate-800 text-slate-300 hover:bg-slate-800'} transition">Todos</button>`;
             
             categoriesSet.forEach(cat => {
@@ -264,11 +242,10 @@
 
             categoriesContainer.innerHTML = html;
 
-            // Adiciona listeners aos botões de categoria
             document.querySelectorAll('.category-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     currentCategory = e.target.getAttribute('data-category');
-                    initCategories(); // Recria para atualizar classes ativas
+                    initCategories();
                     renderPrograms();
                 });
             });
@@ -278,7 +255,6 @@
             const grid = document.getElementById('programsGrid');
             const emptyState = document.getElementById('emptyState');
 
-            // Filtragem por categoria e termo de pesquisa
             const filtered = allPrograms.filter(prog => {
                 const matchesCategory = currentCategory === 'all' || prog.category === currentCategory;
                 const query = searchQuery.toLowerCase();
@@ -350,13 +326,11 @@
             grid.innerHTML = html;
         }
 
-        // Event listener para a barra de pesquisa
         document.getElementById('searchInput').addEventListener('input', (e) => {
             searchQuery = e.target.value;
             renderPrograms();
         });
 
-        // Toggle Dark/Light mode simples (mantendo o tema escuro como padrão profissional)
         const themeToggle = document.getElementById('themeToggle');
         themeToggle.addEventListener('click', () => {
             const htmlEl = document.documentElement;
@@ -370,7 +344,6 @@
             }
         });
 
-        // Inicializar aplicação ao carregar a página
         window.onload = () => {
             loadPrograms();
         };
