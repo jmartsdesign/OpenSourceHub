@@ -307,5 +307,14 @@
   "website": "https://www.libreoffice.org/",
   "icon": "fa-solid fa-file-lines",
   "tags": ["office", "documentos", "calc", "writer", "impress", "opensource"]
+},
+{
+  "name": "Bforartists",
+  "category": "3D",
+  "description": "Software open-source de modelação, animação, renderização e criação de conteúdos 3D, baseado no Blender com interface simplificada.",
+  "url": "https://github.com/Bforartists/Bforartists",
+  "website": "https://www.bforartists.de/",
+  "icon": "fa-solid fa-cube",
+  "tags": ["3d", "blender", "modelação", "animação", "renderização", "opensource"]
 }
 ]
