@@ -235,5 +235,23 @@
   "website": "https://super-productivity.com/",
   "icon": "fa-solid fa-list-check",
   "tags": ["produtividade", "tarefas", "gestão de tempo", "github", "jira", "todo"]
+},
+{
+  "name": "Pascal Editor",
+  "category": "ArchViz",
+  "description": "Editor 3D open-source para criação e visualização de edifícios, com ferramentas práticas para arquitetura e planeamento espacial.",
+  "url": "https://github.com/pascalorg/editor",
+  "website": "https://editor.pascal.app/",
+  "icon": "fa-solid fa-cube",
+  "tags": ["3d", "arquitetura", "edifícios", "modelação", "open-source", "design"]
+},
+{
+  "name": "Floor Plan Designer",
+  "category": "ArchVIZ",
+  "description": "Aplicação web open-source para desenhar plantas, organizar divisões e visualizar projetos arquitetónicos em 3D diretamente no navegador.",
+  "url": "https://github.com/wy51ai/floorplan-3d/blob/master/README.en.md",
+  "website": "https://wy51ai.github.io/floorplan-3d/",
+  "icon": "fa-solid fa-draw-polygon",
+  "tags": ["planta", "floorplan", "arquitetura", "3d", "interiores", "web"]
 }
 ]
