@@ -46,7 +46,7 @@
 },
 {
 "name": "Godot Engine",
-"category": "ENGINE",
+"category": "Engine",
 "description": "Motor de jogos 2D e 3D de código aberto com interface integrada rica para criação de assets.",
 "url": "https://github.com/godotengine/godot",
 "website": "https://godotengine.org",
@@ -141,5 +141,32 @@
 "website": "https://www.gimp.org/",
 "icon": "fa-solid fa-image",
 "tags": ["imagem", "design", "fotografia", "raster"]
+},
+{
+  "name": "IngeCAD",
+  "category": "CAD",
+  "description": "CAD 2D gratuito para Linux com compatibilidade DWG/DXF, desenho clássico por comandos e extensões para topografia e engenharia.",
+  "url": "https://github.com/ingelibre/ingecad",
+  "website": "https://ingecad.org/",
+  "icon": "fa-solid fa-drafting-compass",
+  "tags": ["cad", "dwg", "dxf", "linux", "topografia", "engenharia"]
+},
+{
+  "name": "IngePresupuestos",
+  "category": "Gestão de Obras",
+  "description": "Software livre para elaboração de orçamentos, medições, custos e controlo económico de projetos de construção.",
+  "url": "https://ingepresupuestos.com/",
+  "website": "https://ingepresupuestos.com/",
+  "icon": "fa-solid fa-file-invoice-dollar",
+  "tags": ["orçamentos", "construção", "medições", "custos", "obra", "gestão", "AEC"]
+},
+{
+  "name": "Open AEC Foundation",
+  "category": "BIM",
+  "description": "Iniciativa open-source dedicada à construção, engenharia e infraestruturas, promovendo soluções abertas para o setor AEC.",
+  "url": "https://open-aec.com/",
+  "website": "https://open-aec.com/",
+  "icon": "fa-solid fa-building",
+  "tags": ["bim", "aec", "infraestruturas", "construção", "engenharia", "open-source"]
 }
 ]
