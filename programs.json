@@ -70,5 +70,32 @@
 "website": "https://hew3d.com/",
 "icon": "fa-solid fa-cube",
 "tags": ["cad", "engenharia", "3d", "sketchup"]
+},
+  {
+  "name": "ActionForge",
+  "category": "3D",
+  "description": "Ferramenta online para animação de personagens 3D diretamente no navegador, com rigging e poses.",
+  "url": "https://actionforge.app/",
+  "website": "https://actionforge.app/",
+  "icon": "fa-solid fa-person-running",
+  "tags": ["3d", "animação", "rigging", "personagens"]
+},
+{
+  "name": "Mesh2Motion",
+  "category": "3D",
+  "description": "Plataforma para converter modelos 3D em personagens animados utilizando inteligência artificial.",
+  "url": "https://mesh2motion.org/",
+  "website": "https://mesh2motion.org/",
+  "icon": "fa-solid fa-person-walking",
+  "tags": ["3d", "animação", "ai", "motion"]
+},
+{
+  "name": "Alpaca3D",
+  "category": "3D",
+  "description": "Ferramenta gratuita para retopologia automática, UV Unwrapping e texture baking de modelos 3D.",
+  "url": "https://alpaca3d.app/",
+  "website": "https://alpaca3d.app/",
+  "icon": "fa-solid fa-cubes",
+  "tags": ["3d", "retopologia", "uv", "texturas"]
 }
 ]
