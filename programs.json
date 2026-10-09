@@ -137,7 +137,6 @@
 "name": "GIMP",
 "category": "Design",
 "description": "Editor de imagens de código aberto para retoque fotográfico, ilustração e design gráfico.",
-"url": "https://www.gimp.org/",
 "website": "https://www.gimp.org/",
 "icon": "fa-solid fa-image",
 "tags": ["imagem", "design", "fotografia", "raster"]
@@ -155,7 +154,7 @@
   "name": "IngePresupuestos",
   "category": "Gestão de Obras",
   "description": "Software livre para elaboração de orçamentos, medições, custos e controlo económico de projetos de construção.",
-  "url": "https://ingepresupuestos.com/",
+  "url": "https://github.com/ingelibre/ingepresupuestos",
   "website": "https://ingepresupuestos.com/",
   "icon": "fa-solid fa-file-invoice-dollar",
   "tags": ["orçamentos", "construção", "medições", "custos", "obra", "gestão", "AEC"]
@@ -164,9 +163,77 @@
   "name": "Open AEC Foundation",
   "category": "BIM",
   "description": "Iniciativa open-source dedicada à construção, engenharia e infraestruturas, promovendo soluções abertas para o setor AEC.",
-  "url": "https://open-aec.com/",
+  "url": "https://github.com/OpenAEC-Foundation",
   "website": "https://open-aec.com/",
   "icon": "fa-solid fa-building",
   "tags": ["bim", "aec", "infraestruturas", "construção", "engenharia", "open-source"]
+},
+{
+  "name": "OpenSpace3D",
+  "category": "VR",
+  "description": "Plataforma open-source para criação de aplicações 3D, realidade virtual e realidade aumentada sem programação complexa.",
+  "website": "https://www.openspace3d.com/en/",
+  "icon": "fa-solid fa-vr-cardboard",
+  "tags": ["3d", "vr", "ar", "realidade virtual", "realidade aumentada", "game engine"]
+},
+{
+  "name": "Hugin",
+  "category": "Fotografia",
+  "description": "Software open-source para criação de panoramas fotográficos através da união automática de múltiplas imagens.",
+  "website": "https://hugin.sourceforge.io/",
+  "icon": "fa-solid fa-panorama",
+  "tags": ["fotografia", "panorama", "stitching", "imagem", "open-source"]
+},
+{
+  "name": "Kerkythea",
+  "category": "Renderização",
+  "description": "Software gratuito de renderização fotorrealista com materiais e iluminação fisicamente precisos para modelos 3D.",
+  "website": "https://kerkythea.net/",
+  "icon": "fa-solid fa-camera",
+  "tags": ["render", "3d", "visualização", "arquitetura", "sketchup", "fotorrealismo"]
+},
+{
+  "name": "OpenShot",
+  "category": "Vídeo",
+  "description": "Editor de vídeo open-source multiplataforma com suporte para animações, transições, legendas e composição de vídeo.",
+  "website": "https://www.openshot.org/",
+  "icon": "fa-solid fa-film",
+  "tags": ["vídeo", "edição", "animação", "multimédia", "youtube", "open-source"]
+},
+{
+  "name": "Silex",
+  "category": "Web Design",
+  "description": "Construtor de websites open-source com editor visual, permitindo criar sites estáticos sem necessidade de programação.",
+  "url": "https://github.com/silexlabs/Silex",
+  "website": "https://www.silex.me/",
+  "icon": "fa-solid fa-globe",
+  "tags": ["website", "webdesign", "html", "cms", "editor visual", "open-source"]
+},
+{
+  "name": "Kdenlive",
+  "category": "Vídeo",
+  "description": "Editor de vídeo open-source com edição multipista, efeitos visuais, transições, animações e suporte para diversos formatos.",
+  "url": "https://kdenlive.org/",
+  "website": "https://kdenlive.org/",
+  "icon": "fa-solid fa-video",
+  "tags": ["vídeo", "edição", "montagem", "multimédia", "youtube", "open-source"]
+},
+{
+  "name": "Joplin",
+  "category": "Produtividade",
+  "description": "Aplicação open-source para notas, gestão de conhecimento e tarefas, com suporte para Markdown e sincronização multiplataforma.",
+  "url": "https://github.com/laurent22/joplin/",
+  "website": "https://joplinapp.org/",
+  "icon": "fa-solid fa-note-sticky",
+  "tags": ["notas", "markdown", "produtividade", "pkm", "tarefas", "organização"]
+},
+{
+  "name": "Super Productivity",
+  "category": "Produtividade",
+  "description": "Gestor de tarefas open-source focado em trabalho profundo, integração com GitHub, Jira e controlo de tempo.",
+  "url": "https://github.com/johannesjo/super-productivity",
+  "website": "https://super-productivity.com/",
+  "icon": "fa-solid fa-list-check",
+  "tags": ["produtividade", "tarefas", "gestão de tempo", "github", "jira", "todo"]
 }
 ]
