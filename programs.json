@@ -28,7 +28,7 @@
 },
 {
 "name": "Inkscape",
-"category": "Design",
+"category": "Design Gráfico",
 "description": "Editor de gráficos vetoriais profissional para Linux, Windows e macOS.",
 "url": "https://gitlab.com/inkscape/inkscape",
 "website": "https://inkscape.org",
@@ -238,7 +238,7 @@
 },
 {
   "name": "Pascal Editor",
-  "category": "ArchViz",
+  "category": "3D",
   "description": "Editor 3D open-source para criação e visualização de edifícios, com ferramentas práticas para arquitetura e planeamento espacial.",
   "url": "https://github.com/pascalorg/editor",
   "website": "https://editor.pascal.app/",
@@ -253,5 +253,59 @@
   "website": "https://wy51ai.github.io/floorplan-3d/",
   "icon": "fa-solid fa-draw-polygon",
   "tags": ["planta", "floorplan", "arquitetura", "3d", "interiores", "web"]
+},
+{
+  "name": "Splat2Mesh",
+  "category": "Gaussian Splatting",
+  "description": "Ferramenta open-source que converte modelos Gaussian Splatting em malhas 3D editáveis, facilitando a reconstrução e exportação de geometria.",
+  "url": "https://arcana-mfg.com/en/splat2mesh/",
+  "website": "https://arcana-mfg.com/en/splat2mesh/",
+  "icon": "fa-solid fa-cube",
+  "tags": ["3d", "mesh", "gaussian splatting", "fotogrametria", "reconstrução", "opensource"]
+},
+{
+  "name": "Neocities",
+  "category": "Web Design",
+  "description": "Plataforma gratuita para criar, alojar e publicar websites estáticos, promovendo uma web aberta, criativa e independente.",
+  "url": "https://github.com/neocities",
+  "website": "https://neocities.org/",
+  "icon": "fa-solid fa-globe",
+  "tags": ["website", "hosting", "html", "css", "webdesign", "comunidade"]
+},
+{
+  "name": "PixiEditor",
+  "category": "Design Gráfico",
+  "description": "Editor open-source de pixel art e gráficos 2D com suporte para camadas, animação, desenho vetorial e raster.",
+  "url": "https://github.com/PixiEditor/PixiEditor",
+  "website": "https://pixieditor.net/",
+  "icon": "fa-solid fa-palette",
+  "tags": ["pixel art", "2d", "design", "animação", "gráficos", "opensource"]
+},
+{
+  "name": "Scribus",
+  "category": "Design Editorial",
+  "description": "Software open-source de paginação profissional para criação de livros, revistas, brochuras, jornais, cartazes e ficheiros PDF.",
+  "url": "https://www.scribus.net/",
+  "website": "https://www.scribus.net/",
+  "icon": "fa-solid fa-book-open",
+  "tags": ["dtp", "editorial", "paginação", "pdf", "revistas", "livros"]
+},
+{
+  "name": "ONLYOFFICE",
+  "category": "Produtividade",
+  "description": "Suite de escritório open-source para edição de documentos, folhas de cálculo, apresentações, formulários e colaboração online.",
+  "url": "https://github.com/ONLYOFFICE/",
+  "website": "https://www.onlyoffice.com/",
+  "icon": "fa-solid fa-file-word",
+  "tags": ["office", "documentos", "planilhas", "apresentações", "colaboração", "opensource"]
+},
+{
+  "name": "LibreOffice",
+  "category": "Produtividade",
+  "description": "Suite de escritório open-source composta por processador de texto, folha de cálculo, apresentações, desenho vetorial e base de dados.",
+  "url": "https://www.libreoffice.org/",
+  "website": "https://www.libreoffice.org/",
+  "icon": "fa-solid fa-file-lines",
+  "tags": ["office", "documentos", "calc", "writer", "impress", "opensource"]
 }
 ]
