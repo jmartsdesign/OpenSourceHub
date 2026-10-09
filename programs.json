@@ -46,7 +46,7 @@
 },
 {
 "name": "Godot Engine",
-"category": "3D",
+"category": "ENGINE",
 "description": "Motor de jogos 2D e 3D de código aberto com interface integrada rica para criação de assets.",
 "url": "https://github.com/godotengine/godot",
 "website": "https://godotengine.org",
@@ -55,12 +55,12 @@
 },
 {
 "name": "IngeTrazo",
-"category": "CAD",
+"category": "Arquitetura",
 "description": "Desenhe como se fosse à mão. Modelador 3D de código aberto para arquitetura, engenharia e design.",
 "url": "https://github.com/ingelibre/ingetrazo",
 "website": "https://ingetrazo.com/en/",
 "icon": "fa-solid fa-compass-drafting",
-"tags": ["cad", "paramétrico", "engenharia", "3d"]
+"tags": ["cad", "paramétrico", "engenharia", "3d", "Arquitetura"]
 },
 {
 "name": "hew3D",
@@ -97,5 +97,51 @@
   "website": "https://alpaca3d.app/",
   "icon": "fa-solid fa-cubes",
   "tags": ["3d", "retopologia", "uv", "texturas"]
+},
+  ,
+{
+  "name": "Open CAD Studio",
+  "category": "CAD",
+  "description": "Software CAD gratuito compatível com DWG e DXF para desenho técnico 2D.",
+  "url": "https://www.opencadstudio.com/",
+  "website": "https://www.opencadstudio.com/",
+  "icon": "fa-solid fa-compass-drafting",
+  "tags": ["cad", "dwg", "dxf", "2d"]
+},
+{
+  "name": "MeshLab",
+  "category": "3D",
+  "description": "Processamento e edição avançada de malhas 3D, incluindo limpeza, reconstrução e conversão de modelos.",
+  "url": "https://www.meshlab.net/",
+  "website": "https://www.meshlab.net/",
+  "icon": "fa-solid fa-cubes",
+  "tags": ["3d", "mesh", "malha", "scan"]
+},
+{
+  "name": "Sweet Home 3D",
+  "category": "Arquitetura",
+  "description": "Aplicação gratuita para desenho de interiores, plantas e visualização 3D de habitações.",
+  "url": "https://www.sweethome3d.com/pt-br/",
+  "website": "https://www.sweethome3d.com/pt-br/",
+  "icon": "fa-solid fa-house",
+  "tags": ["arquitetura", "interiores", "3d", "casa"]
+},
+{
+  "name": "QGIS",
+  "category": "SIG",
+  "description": "Sistema de Informação Geográfica de código aberto para análise espacial, cartografia e geoprocessamento.",
+  "url": "https://qgis.org/",
+  "website": "https://qgis.org/",
+  "icon": "fa-solid fa-map-location-dot",
+  "tags": ["gis", "cartografia", "mapas", "geoespacial"]
+},
+{
+  "name": "GIMP",
+  "category": "Design",
+  "description": "Editor de imagens de código aberto para retoque fotográfico, ilustração e design gráfico.",
+  "url": "https://www.gimp.org/",
+  "website": "https://www.gimp.org/",
+  "icon": "fa-solid fa-image",
+  "tags": ["imagem", "design", "fotografia", "raster"]
 }
 ]
