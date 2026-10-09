@@ -75,7 +75,6 @@
 "name": "ActionForge",
 "category": "Animation",
 "description": "Ferramenta online para animação de personagens 3D diretamente no navegador, com rigging e poses.",
-"url": "https://actionforge.app/",
 "website": "https://actionforge.app/",
 "icon": "fa-solid fa-person-running",
 "tags": ["3d", "animação", "rigging", "personagens"]
@@ -84,7 +83,7 @@
 "name": "Mesh2Motion",
 "category": "3D",
 "description": "Plataforma para converter modelos 3D em personagens animados utilizando inteligência artificial.",
-"url": "https://mesh2motion.org/",
+"url": "https://github.com/scottpetrovic/mesh2motion-app/",
 "website": "https://mesh2motion.org/",
 "icon": "fa-solid fa-person-walking",
 "tags": ["3d", "animação", "ai", "motion"]
@@ -111,7 +110,7 @@
 "name": "MeshLab",
 "category": "3D",
 "description": "Processamento e edição avançada de malhas 3D, incluindo limpeza, reconstrução e conversão de modelos.",
-"url": "https://www.meshlab.net/",
+"url": "https://github.com/cnr-isti-vclab/meshlab",
 "website": "https://www.meshlab.net/",
 "icon": "fa-solid fa-cubes",
 "tags": ["3d", "mesh", "malha", "scan"]
