@@ -73,7 +73,7 @@
 },
   {
   "name": "ActionForge",
-  "category": "3D",
+  "category": "Animation",
   "description": "Ferramenta online para animação de personagens 3D diretamente no navegador, com rigging e poses.",
   "url": "https://actionforge.app/",
   "website": "https://actionforge.app/",
@@ -91,7 +91,7 @@
 },
 {
   "name": "Alpaca3D",
-  "category": "3D",
+  "category": "UVMaping",
   "description": "Ferramenta gratuita para retopologia automática, UV Unwrapping e texture baking de modelos 3D.",
   "url": "https://alpaca3d.app/",
   "website": "https://alpaca3d.app/",
