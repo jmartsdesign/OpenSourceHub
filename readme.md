@@ -1,6 +1,8 @@
 # 🌐 OpenSource Hub — Repositório de Ferramentas Criativas e Técnicas
 
-Um diretório moderno, elegante e de código aberto focado em softwares livres e open-source para **CAD, Modelação 3D, Design Gráfico, Ilustração, Animação e Desenvolvimento**. 
+Um diretório moderno, elegante e de código aberto focado em softwares livres e open-source para **CAD, Modelação 3D, Design Gráfico, Ilustração, Animação e Desenvolvimento**.
+
+![](https://github.com/jmartsdesign/OpenSourceHub/blob/main/msedge_7EnhJd5Rga.png?raw=true)
 
 Este repositório está configurado para funcionar de forma estática com o **GitHub Pages**, permitindo gerir e atualizar todos os links e programas de forma simples através de um único ficheiro JSON.
 
