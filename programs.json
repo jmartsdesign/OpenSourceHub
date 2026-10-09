@@ -28,7 +28,7 @@
 },
 {
 "name": "Inkscape",
-"category": "Design Gráfico",
+"category": "Design Vetorial",
 "description": "Editor de gráficos vetoriais profissional para Linux, Windows e macOS.",
 "url": "https://gitlab.com/inkscape/inkscape",
 "website": "https://inkscape.org",
@@ -325,6 +325,41 @@
   "website": "https://aframe.io/",
   "icon": "fa-solid fa-vr-cardboard",
   "tags": ["webxr", "vr", "ar", "3d", "three.js", "metaverso"]
+},
+{
+  "name": "Blockbench",
+  "category": "3D",
+  "description": "Editor open-source de modelos 3D low-poly com ferramentas para modelação, texturização, animação e exportação para jogos.",
+  "url": "https://github.com/JannisX11/blockbench",
+  "website": "https://blockbench.net/",
+  "icon": "fa-solid fa-cube",
+  "tags": ["3d", "low-poly", "modelação", "animação", "minecraft", "game dev"]
+},
+{
+  "name": "Macad|3D",
+  "category": "CAD",
+  "description": "Software open-source de modelação CAD 3D paramétrica baseado em OpenCascade, orientado para engenharia, produto e desenho mecânico.",
+  "url": "https://macad3d.net/",
+  "website": "https://macad3d.net/",
+  "icon": "fa-solid fa-cubes",
+  "tags": ["cad", "3d", "paramétrico", "opencascade", "engenharia", "modelação"]
+},
+{
+  "name": "SuperSplat Editor",
+  "category": "Gaussian Splatting",
+  "description": "Editor open-source para visualização, otimização, edição e exportação de modelos Gaussian Splatting diretamente no navegador.",
+  "url": "https://github.com/playcanvas/supersplat-viewer",
+  "website": "https://superspl.at/editor",
+  "icon": "fa-solid fa-cloud",
+  "tags": ["gaussian splatting", "3d", "fotogrametria", "point cloud", "web", "opensource"]
+},
+{
+  "name": "Graphite",
+  "category": "Design Vetorial",
+  "description": "Editor vetorial open-source com fluxo de trabalho procedural baseado em nós, combinando design gráfico, ilustração e automação visual.",
+  "url": "https://github.com/GraphiteEditor/Graphite",
+  "website": "https://graphite.art/",
+  "icon": "fa-solid fa-bezier-curve",
+  "tags": ["vetorial", "design", "ilustração", "nós", "procedural", "opensource"]
 }
-``
 ]
