@@ -316,5 +316,15 @@
   "website": "https://www.bforartists.de/",
   "icon": "fa-solid fa-cube",
   "tags": ["3d", "blender", "modelação", "animação", "renderização", "opensource"]
+},
+{
+  "name": "A-Frame",
+  "category": "WebXR",
+  "description": "Framework open-source baseado em HTML para criar experiências de realidade virtual, aumentada e cenas 3D diretamente no navegador.",
+  "url": "https://github.com/aframevr",
+  "website": "https://aframe.io/",
+  "icon": "fa-solid fa-vr-cardboard",
+  "tags": ["webxr", "vr", "ar", "3d", "three.js", "metaverso"]
 }
+``
 ]
