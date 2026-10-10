@@ -372,12 +372,12 @@
   "tags": ["motion graphics", "animação", "vetorial", "nós", "design", "opensource"]
 },
 {
-  "name": "Friction",
+  "name": "ArtCraft",
   "category": "Design",
-  "description": "Ferramenta open-source de motion graphics e animação vetorial baseada em nós, inspirada em fluxos de trabalho procedurais.",
+  "description": "Coleção de ferramentas criativas open-source para geração de imagens, edição visual e fluxos de trabalho artísticos assistidos por IA.",
   "url": "https://github.com/storytold",
-  "website": "https://friction.graphics/",
-  "icon": "fa-solid fa-diagram-project",
-  "tags": ["motion graphics", "animação", "vetorial", "nós", "design", "opensource"]
+  "website": "https://getartcraft.com/apps",
+  "icon": "fa-solid fa-wand-magic-sparkles",
+  "tags": ["ia", "arte", "imagem", "criatividade", "design", "opensource"]
 }
 ]
