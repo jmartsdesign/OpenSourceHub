@@ -238,7 +238,7 @@
 },
 {
   "name": "Pascal Editor",
-  "category": "3D",
+  "category": "ArchViz",
   "description": "Editor 3D open-source para criação e visualização de edifícios, com ferramentas práticas para arquitetura e planeamento espacial.",
   "url": "https://github.com/pascalorg/editor",
   "website": "https://editor.pascal.app/",
