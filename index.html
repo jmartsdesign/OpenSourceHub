@@ -74,7 +74,7 @@
             <input 
                 type="text" 
                 id="searchInput" 
-                placeholder="Pesquisar por nome, descrição ou tecnologia (ex: Blender, FreeCAD)..." 
+                placeholder="Pesquisar por nome, descrição ou tag (ex: Blender, cad, vetor)..." 
                 class="w-full pl-11 pr-4 py-3.5 bg-white border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent shadow-xl transition dark:bg-slate-900 dark:border-slate-800 dark:text-slate-100 dark:placeholder-slate-500"
             >
         </div>
@@ -85,6 +85,18 @@
                 Todos
             </button>
         </div>
+
+        <!-- Ordenação -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mt-4">
+            <label for="sortSelect" class="text-xs font-medium text-slate-500 dark:text-slate-400">Ordenar por:</label>
+            <select id="sortSelect" class="px-3 py-2 rounded-xl text-xs font-semibold bg-white border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-300 transition">
+                <option value="alpha" selected>Ordem Alfabética</option>
+                <option value="votes">Votação (mais votados)</option>
+            </select>
+        </div>
+
+        <!-- Tags Ativas -->
+        <div id="activeTags" class="flex flex-wrap justify-center gap-2 mt-4 hidden"></div>
     </section>
 
     <!-- Main Content Grid -->
@@ -147,6 +159,86 @@
         let allPrograms = [];
         let currentCategory = 'all';
         let searchQuery = '';
+        let currentSort = 'alpha';
+        let activeTags = [];
+
+        const VOTES_KEY = 'opensourceshub-votes';
+
+        function getVotes() {
+            try {
+                const v = JSON.parse(localStorage.getItem(VOTES_KEY));
+                return (v && typeof v === 'object') ? v : {};
+            } catch {
+                return {};
+            }
+        }
+
+        function saveVotes(votes) {
+            localStorage.setItem(VOTES_KEY, JSON.stringify(votes));
+        }
+
+        function getVoteCount(name) {
+            return getVotes()[name] || 0;
+        }
+
+        function toggleVote(name, btn) {
+            const votes = getVotes();
+            votes[name] = (votes[name] || 0) + 1;
+            saveVotes(votes);
+            btn.querySelector('.vote-count').textContent = votes[name];
+            btn.querySelector('i').className = 'fa-solid fa-arrow-up voted';
+            btn.disabled = true;
+            btn.classList.add('voted');
+            btn.title = 'Já votou nesta aplicação';
+            if (currentSort === 'votes') renderPrograms();
+        }
+
+        function hasVoted(name) {
+            return !!getVotes()[name];
+        }
+
+        function normalizeTag(t) {
+            return (t || '').toString().trim().toLowerCase();
+        }
+
+        function initSort() {
+            document.getElementById('sortSelect').addEventListener('change', (e) => {
+                currentSort = e.target.value;
+                renderPrograms();
+            });
+        }
+
+        function renderActiveTags() {
+            const container = document.getElementById('activeTags');
+            if (activeTags.length === 0) {
+                container.classList.add('hidden');
+                container.innerHTML = '';
+                return;
+            }
+            container.classList.remove('hidden');
+            container.innerHTML = activeTags.map(t =>
+                `<button data-tag="${t}" class="active-tag-btn inline-flex items-center space-x-1 px-3 py-1.5 rounded-xl text-xs font-semibold bg-brand-600 text-white shadow-md transition"><span>#${t}</span><i class="fa-solid fa-xmark text-[10px]"></i></button>`
+            ).join('');
+            container.querySelectorAll('.active-tag-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    activeTags = activeTags.filter(t => t !== btn.getAttribute('data-tag'));
+                    renderActiveTags();
+                    renderPrograms();
+                });
+            });
+        }
+
+        function toggleTagFilter(tag) {
+            tag = normalizeTag(tag);
+            if (!tag) return;
+            if (activeTags.includes(tag)) {
+                activeTags = activeTags.filter(t => t !== tag);
+            } else {
+                activeTags.push(tag);
+            }
+            renderActiveTags();
+            renderPrograms();
+        }
 
         const fallbackPrograms = [
             {
@@ -233,6 +325,8 @@
             } finally {
                 loadingState.classList.add('hidden');
                 initCategories();
+                initSort();
+                renderActiveTags();
                 renderPrograms();
             }
         }
@@ -271,8 +365,18 @@
                     (prog.description && prog.description.toLowerCase().includes(query)) ||
                     (prog.category && prog.category.toLowerCase().includes(query)) ||
                     (prog.tags && prog.tags.some(t => t.toLowerCase().includes(query)));
+                const progTags = (prog.tags || []).map(normalizeTag);
+                const matchesTags = activeTags.length === 0 || activeTags.every(t => progTags.includes(t));
                 
-                return matchesCategory && matchesSearch;
+                return matchesCategory && matchesSearch && matchesTags;
+            });
+
+            const sorted = [...filtered].sort((a, b) => {
+                if (currentSort === 'votes') {
+                    const diff = getVoteCount(b.name) - getVoteCount(a.name);
+                    if (diff !== 0) return diff;
+                }
+                return (a.name || '').localeCompare(b.name || '', 'pt', { sensitivity: 'base' });
             });
 
             if (filtered.length === 0) {
@@ -284,9 +388,15 @@
             emptyState.classList.add('hidden');
 
             let html = '';
-            filtered.forEach(prog => {
+            sorted.forEach(prog => {
                 const iconClass = prog.icon || 'fa-solid fa-cube';
-                const tagsHtml = prog.tags ? prog.tags.map(t => `<span class="text-[10px] bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300 px-2 py-0.5 rounded-md border border-slate-300 dark:border-slate-700">#${t}</span>`).join('') : '';
+                const votes = getVoteCount(prog.name);
+                const voted = hasVoted(prog.name);
+                const tagsHtml = prog.tags ? prog.tags.map(t => {
+                    const nt = normalizeTag(t);
+                    const active = activeTags.includes(nt);
+                    return `<button data-tag="${t}" class="tag-btn text-[10px] px-2 py-0.5 rounded-md border transition cursor-pointer ${active ? 'bg-brand-600 text-white border-brand-600' : 'bg-slate-200 text-slate-700 border-slate-300 hover:bg-slate-300 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-700'}">#${t}</button>`;
+                }).join('') : '';
 
                 html += `
                     <div class="bg-white/80 border border-slate-200 hover:border-slate-300 dark:bg-slate-900/80 dark:border-slate-800 dark:hover:border-slate-700 rounded-2xl p-5 transition flex flex-col justify-between shadow-xl group">
@@ -303,6 +413,10 @@
                                         </span>
                                     </div>
                                 </div>
+                                <button class="vote-btn shrink-0 flex flex-col items-center px-2.5 py-1.5 rounded-xl border transition ${voted ? 'bg-brand-500/10 border-brand-500/40 text-brand-500 cursor-default' : 'bg-slate-100 border-slate-300 text-slate-600 hover:border-brand-500 hover:text-brand-500 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300 dark:hover:border-brand-500 dark:hover:text-brand-400'}" data-name="${prog.name}" ${voted ? 'disabled' : ''} title="${voted ? 'Já votou nesta aplicação' : 'Votar nesta aplicação'}">
+                                    <i class="fa-solid ${voted ? 'fa-arrow-up voted' : 'fa-regular fa-arrow-up'}"></i>
+                                    <span class="vote-count text-xs font-bold mt-0.5">${votes}</span>
+                                </button>
                             </div>
                             <p class="text-xs text-slate-600 dark:text-slate-400 line-clamp-3 mb-4 leading-relaxed">
                                 ${prog.description}
@@ -332,6 +446,14 @@
             });
 
             grid.innerHTML = html;
+
+            grid.querySelectorAll('.tag-btn').forEach(btn => {
+                btn.addEventListener('click', () => toggleTagFilter(btn.getAttribute('data-tag')));
+            });
+
+            grid.querySelectorAll('.vote-btn').forEach(btn => {
+                btn.addEventListener('click', () => toggleVote(btn.getAttribute('data-name'), btn));
+            });
         }
 
         document.getElementById('searchInput').addEventListener('input', (e) => {
