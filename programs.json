@@ -178,7 +178,7 @@
 },
 {
   "name": "Hugin",
-  "category": "Fotografia",
+  "category": "Fotogrametria & Reconstrução 3D",
   "description": "Software open-source para criação de panoramas fotográficos através da união automática de múltiplas imagens.",
   "website": "https://hugin.sourceforge.io/",
   "icon": "fa-solid fa-panorama",
@@ -256,7 +256,7 @@
 },
 {
   "name": "Splat2Mesh",
-  "category": "Gaussian Splatting",
+  "category": "Fotogrametria & Reconstrução 3D",
   "description": "Ferramenta open-source que converte modelos Gaussian Splatting em malhas 3D editáveis, facilitando a reconstrução e exportação de geometria.",
   "url": "https://arcana-mfg.com/en/splat2mesh/",
   "website": "https://arcana-mfg.com/en/splat2mesh/",
@@ -346,7 +346,7 @@
 },
 {
   "name": "SuperSplat Editor",
-  "category": "Gaussian Splatting",
+  "category": "Fotogrametria & Reconstrução 3D",
   "description": "Editor open-source para visualização, otimização, edição e exportação de modelos Gaussian Splatting diretamente no navegador.",
   "url": "https://github.com/playcanvas/supersplat-viewer",
   "website": "https://superspl.at/editor",
@@ -379,5 +379,23 @@
   "website": "https://getartcraft.com/apps",
   "icon": "fa-solid fa-wand-magic-sparkles",
   "tags": ["ia", "arte", "imagem", "criatividade", "design", "opensource"]
+},
+{
+  "name": "MapMap",
+  "category": "Video Mapping",
+  "description": "Software open-source de projection mapping que permite projetar vídeos e animações sobre superfícies, objetos e edifícios.",
+  "url": "https://github.com/mapmapteam/mapmap",
+  "website": "https://mapmapteam.github.io/en/",
+  "icon": "fa-solid fa-video",
+  "tags": ["projection mapping", "video mapping", "projeção", "instalações", "arte digital", "audiovisual"]
+},
+{
+  "name": "Meshroom",
+  "category": "Fotogrametria & Reconstrução 3D",
+  "description": "Software open-source de fotogrametria baseado no AliceVision que converte fotografias em modelos 3D através de uma interface visual por nós.",
+  "url": "https://github.com/alicevision/Meshroom",
+  "website": "https://meshroom.org/",
+  "icon": "fa-solid fa-camera-retro",
+  "tags": ["fotogrametria", "3d", "alicevision", "reconstrução", "scan", "mesh"]
 }
 ]
