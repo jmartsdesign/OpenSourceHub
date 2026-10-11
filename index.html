@@ -150,6 +150,11 @@
         </div>
     </section>
 
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" class="fixed bottom-6 right-6 z-40 p-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-600/30 transition opacity-0 pointer-events-none" title="Voltar ao topo" aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up text-sm"></i>
+    </button>
+
     <!-- Rodapé -->
     <footer class="border-t border-slate-200 dark:border-slate-900 py-6 text-center text-xs text-slate-500">
         <p>Criado para o GitHub Pages • Feito com código aberto e Tailwind CSS</p>
@@ -512,6 +517,17 @@
         });
 
         initPreviewFallback();
+
+        const backToTop = document.getElementById('backToTop');
+        const toggleBackToTop = () => {
+            const show = window.scrollY > 300;
+            backToTop.classList.toggle('opacity-0', !show);
+            backToTop.classList.toggle('pointer-events-none', !show);
+        };
+        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
         window.onload = () => {
             loadPrograms();
