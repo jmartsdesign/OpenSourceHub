@@ -144,6 +144,7 @@
                 <ol class="list-decimal list-inside space-y-2 text-slate-600 dark:text-slate-400 text-xs sm:text-sm pl-2">
                     <li>Vá ao seu repositório no GitHub e abra o ficheiro <code class="bg-slate-200 dark:bg-slate-800 px-1.5 py-0.5 rounded text-brand-400 font-mono">programs.json</code>.</li>
                     <li>Clique no ícone de lápis para editar e adicione o seu bloco JSON.</li>
+                    <li>A imagem de preview é encontrada automaticamente a partir do site ou repositório do programa. Opcionalmente, pode indicar uma imagem própria com o campo <code class="bg-slate-200 dark:bg-slate-800 px-1.5 py-0.5 rounded text-brand-400 font-mono">"preview": "https://exemplo.com/imagem.png"</code>.</li>
                 </ol>
             </div>
         </div>
@@ -199,6 +200,39 @@
 
         function normalizeTag(t) {
             return (t || '').toString().trim().toLowerCase();
+        }
+
+        function escapeAttr(s) {
+            return (s || '').toString().replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        function extractDomain(url) {
+            if (!url) return null;
+            try {
+                return new URL(url).hostname;
+            } catch {
+                return null;
+            }
+        }
+
+        function getPreviewUrl(prog) {
+            if (prog.preview) return prog.preview;
+            const domain = extractDomain(prog.website) || extractDomain(prog.url);
+            if (!domain) return null;
+            return 'https://www.google.com/s2/favicons?sz=128&domain=' + encodeURIComponent(domain);
+        }
+
+        function initPreviewFallback() {
+            document.addEventListener('error', (e) => {
+                const img = e.target;
+                if (!(img instanceof HTMLImageElement) || !img.classList.contains('preview-img')) return;
+                const box = img.closest('[data-preview-box]');
+                if (!box || img.dataset.retried) return;
+                img.dataset.retried = '1';
+                img.remove();
+                const icon = box.querySelector('i');
+                if (icon) icon.classList.remove('hidden');
+            }, true);
         }
 
         function initSort() {
@@ -390,6 +424,7 @@
             let html = '';
             sorted.forEach(prog => {
                 const iconClass = prog.icon || 'fa-solid fa-cube';
+                const previewUrl = getPreviewUrl(prog);
                 const votes = getVoteCount(prog.name);
                 const voted = hasVoted(prog.name);
                 const tagsHtml = prog.tags ? prog.tags.map(t => {
@@ -403,8 +438,11 @@
                         <div>
                             <div class="flex items-start justify-between mb-3">
                                 <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 rounded-xl bg-slate-200 border border-slate-300 dark:bg-slate-800 dark:border-slate-700 flex items-center justify-center text-brand-400 group-hover:scale-105 transition">
-                                        <i class="${iconClass} text-lg"></i>
+                                    <div class="w-14 h-14 rounded-xl bg-slate-200 border border-slate-300 dark:bg-slate-800 dark:border-slate-700 flex items-center justify-center text-brand-400 group-hover:scale-105 transition overflow-hidden shrink-0" data-preview-box="">
+                                        ${previewUrl ? `
+                                            <img src="${previewUrl}" alt="Preview ${escapeAttr(prog.name)}" loading="lazy" referrerpolicy="no-referrer" class="w-full h-full object-cover preview-img">
+                                            <i class="${iconClass} text-lg hidden"></i>
+                                        ` : `<i class="${iconClass} text-lg"></i>`}
                                     </div>
                                     <div>
                                         <h3 class="font-bold text-base text-slate-900 dark:text-slate-100">${prog.name}</h3>
@@ -472,6 +510,8 @@
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
             applyTheme(isDark);
         });
+
+        initPreviewFallback();
 
         window.onload = () => {
             loadPrograms();
