@@ -73,7 +73,7 @@
 },
 {
 "name": "ActionForge",
-"category": "Animation",
+"category": "Animação",
 "description": "Ferramenta online para animação de personagens 3D diretamente no navegador, com rigging e poses.",
 "website": "https://actionforge.app/",
 "icon": "fa-solid fa-person-running",
@@ -364,7 +364,7 @@
 },
 {
   "name": "Friction",
-  "category": "Animation",
+  "category": "Animação",
   "description": "Ferramenta open-source de motion graphics e animação vetorial baseada em nós, inspirada em fluxos de trabalho procedurais.",
   "url": "https://github.com/friction2d/friction",
   "website": "https://friction.graphics/",
@@ -424,5 +424,22 @@
   "website": "https://repath.studio/",
   "icon": "fa-solid fa-bezier-curve",
   "tags": ["svg", "vetorial", "design", "web", "editor", "gráficos"]
+},
+{
+  "name": "Pencil2D",
+  "category": "Animação",
+  "description": "Software open-source para animação 2D tradicional, permitindo criar desenhos quadro a quadro com ferramentas bitmap e vetoriais.",
+  "url": "https://github.com/pencil2d/pencil",
+  "website": "https://www.pencil2d.org/",
+  "icon": "fa-solid fa-pencil",
+  "tags": ["animação", "2d", "cartoon", "frame-by-frame", "desenho", "opensource"]
+},
+{
+  "name": "Glaxnimate",
+  "category": "Animação",
+  "description": "Software open-source para animação vetorial 2D, compatível com Lottie, permitindo criar motion graphics para web e aplicações.",
+  "website": "https://glaxnimate.org/",
+  "icon": "fa-solid fa-film",
+  "tags": ["animação", "2d", "lottie", "motion graphics", "vetorial", "opensource"]
 }
 ]
