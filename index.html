@@ -222,6 +222,19 @@
             return 'https://www.google.com/s2/favicons?sz=128&domain=' + encodeURIComponent(domain);
         }
 
+        function initPreviewFallback() {
+            document.addEventListener('error', (e) => {
+                const img = e.target;
+                if (!(img instanceof HTMLImageElement) || !img.classList.contains('preview-img')) return;
+                const box = img.closest('[data-preview-box]');
+                if (!box || img.dataset.retried) return;
+                img.dataset.retried = '1';
+                img.remove();
+                const icon = box.querySelector('i');
+                if (icon) icon.classList.remove('hidden');
+            }, true);
+        }
+
         function initSort() {
             document.getElementById('sortSelect').addEventListener('change', (e) => {
                 currentSort = e.target.value;
@@ -425,9 +438,9 @@
                         <div>
                             <div class="flex items-start justify-between mb-3">
                                 <div class="flex items-center space-x-3">
-                                    <div class="w-14 h-14 rounded-xl bg-slate-200 border border-slate-300 dark:bg-slate-800 dark:border-slate-700 flex items-center justify-center text-brand-400 group-hover:scale-105 transition overflow-hidden shrink-0">
+                                    <div class="w-14 h-14 rounded-xl bg-slate-200 border border-slate-300 dark:bg-slate-800 dark:border-slate-700 flex items-center justify-center text-brand-400 group-hover:scale-105 transition overflow-hidden shrink-0" data-preview-box="">
                                         ${previewUrl ? `
-                                            <img src="${previewUrl}" alt="Preview ${escapeAttr(prog.name)}" loading="lazy" referrerpolicy="no-referrer" class="w-full h-full object-cover preview-img" onerror="this.remove(); this.nextElementSibling.classList.remove('hidden');">
+                                            <img src="${previewUrl}" alt="Preview ${escapeAttr(prog.name)}" loading="lazy" referrerpolicy="no-referrer" class="w-full h-full object-cover preview-img">
                                             <i class="${iconClass} text-lg hidden"></i>
                                         ` : `<i class="${iconClass} text-lg"></i>`}
                                     </div>
@@ -497,6 +510,8 @@
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
             applyTheme(isDark);
         });
+
+        initPreviewFallback();
 
         window.onload = () => {
             loadPrograms();
