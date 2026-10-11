@@ -450,5 +450,32 @@
   "website": "https://candlestickers.app/",
   "icon": "fa-solid fa-stamp",
   "tags": ["stickers", "autocolantes", "design", "ícones", "gráficos", "opensource"]
+},
+{
+  "name": "Mitsuba 3",
+  "category": "Renderização",
+  "description": "Renderizador open-source avançado para renderização direta e inversa, utilizado em visualização física, investigação gráfica e simulação de luz.",
+  "url": "https://github.com/mitsuba-renderer/mitsuba3",
+  "website": "https://www.mitsuba-renderer.org/",
+  "icon": "fa-solid fa-lightbulb",
+  "tags": ["render", "3d", "path tracing", "simulação", "iluminação", "research"]
+},
+{
+  "name": "LuxCoreRender",
+  "category": "Renderizaçã",
+  "description": "Renderizador open-source fisicamente baseado que utiliza path tracing e algoritmos avançados para produzir imagens fotorrealistas.",
+  "url": "https://github.com/LuxCoreRender/LuxCore",
+  "website": "https://luxcorerender.org/",
+  "icon": "fa-solid fa-lightbulb",
+  "tags": ["render", "3d", "path tracing", "fotorrealismo", "arquitetura", "opensource"]
+},
+{
+  "name": "Malt",
+  "category": "Renderização",
+  "description": "Motor de renderização open-source não fotorrealista (NPR) integrado com Blender, focado em estilos artísticos, ilustração técnica e produção visual estilizada.",
+  "url": "https://github.com/bnpr/Malt",
+  "website": "https://malt3d.com/",
+  "icon": "fa-solid fa-brush",
+  "tags": ["render", "npr", "blender", "toon", "ilustração", "3d"]
 }
 ]
