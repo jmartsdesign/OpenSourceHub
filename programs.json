@@ -19,7 +19,7 @@
 },
 {
 "name": "Krita",
-"category": "Ilustração",
+"category": "Ilustração Digital",
 "description": "Software de pintura digital e ilustração profissional criado por artistas para artistas.",
 "url": "https://github.com/KritaORG/krita",
 "website": "https://krita.org",
@@ -397,5 +397,32 @@
   "website": "https://meshroom.org/",
   "icon": "fa-solid fa-camera-retro",
   "tags": ["fotogrametria", "3d", "alicevision", "reconstrução", "scan", "mesh"]
+},
+{
+  "name": "MyPaint",
+  "category": "Ilustração Digital",
+  "description": "Software open-source de pintura digital focado em desenho artístico, com pincéis avançados e suporte para mesas gráficas.",
+  "url": "https://github.com/mypaint/mypaint",
+  "website": "https://www.mypaint.app/en/",
+  "icon": "fa-solid fa-paintbrush",
+  "tags": ["pintura digital", "ilustração", "desenho", "arte", "tablet", "opensource"]
+},
+{
+  "name": "Oma Design",
+  "category": "Design Gráfico",
+  "description": "Suite criativa nativa para Linux com ferramentas integradas para ilustração, design gráfico, edição visual e criação de conteúdos digitais.",
+  "url": "https://github.com/michaelmonetized/omadesign",
+  "website": "https://omadesign.app/",
+  "icon": "fa-solid fa-palette",
+  "tags": ["design", "linux", "ilustração", "gráficos", "criatividade", "suite"]
+},
+{
+  "name": "Repath Studio",
+  "category": "Design Vetorial",
+  "description": "Editor vetorial baseado no navegador para desenho, edição e otimização de ficheiros SVG, com foco em workflows modernos para web.",
+  "url": "https://github.com/repath-studio/repath-studio",
+  "website": "https://repath.studio/",
+  "icon": "fa-solid fa-bezier-curve",
+  "tags": ["svg", "vetorial", "design", "web", "editor", "gráficos"]
 }
 ]
