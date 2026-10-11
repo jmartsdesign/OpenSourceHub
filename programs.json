@@ -441,5 +441,14 @@
   "website": "https://glaxnimate.org/",
   "icon": "fa-solid fa-film",
   "tags": ["animação", "2d", "lottie", "motion graphics", "vetorial", "opensource"]
+},
+{
+  "name": "Candlestick",
+  "category": "Design Gráfico",
+  "description": "Aplicação open-source para criação de autocolantes, ícones e elementos gráficos, com ferramentas simples para design visual.",
+  "url": "https://github.com/Candlestickers/Candlestick",
+  "website": "https://candlestickers.app/",
+  "icon": "fa-solid fa-stamp",
+  "tags": ["stickers", "autocolantes", "design", "ícones", "gráficos", "opensource"]
 }
 ]
