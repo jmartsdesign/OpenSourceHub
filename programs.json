@@ -477,5 +477,13 @@
   "website": "https://malt3d.com/",
   "icon": "fa-solid fa-brush",
   "tags": ["render", "npr", "blender", "toon", "ilustração", "3d"]
+},
+{
+  "name": "SindriCAD",
+  "category": "CAD",
+  "description": "Software CAD 3D open-source desenvolvido para modelação paramétrica, prototipagem e conceção mecânica, baseado em tecnologias livres.",
+  "url": "https://github.com/MakerViking/sindricad",
+  "icon": "fa-solid fa-cubes",
+  "tags": ["cad", "3d", "paramétrico", "engenharia", "mecânica", "opensource"]
 }
 ]
