@@ -511,5 +511,23 @@
     "website": "https://web.rustgis.app/",
     "icon": "fa-solid fa-earth-americas",
     "tags": ["gis", "rust", "mapas", "geespacial"]
+  },
+{
+    "name": "UPBGE",
+    "category": "Engine",
+    "description": "Fork de código aberto do Blender focado em desenvolvimento de jogos interativos com motor gráfico integrado.",
+    "url": "https://github.com/upbge",
+    "website": "https://upbge.org",
+    "icon": "fa-solid fa-gamepad",
+    "tags": ["3d", "jogos", "motor", "blender"]
+  },
+{
+    "name": "Range Engine",
+    "category": "Engine",
+    "description": "Motor de jogo 3D de código aberto leve e poderoso, ideal para criadores indie com suporte a Python e lógica visual.",
+    "url": "https://github.com/rangeengine",
+    "website": "https://rangeengine.org",
+    "icon": "fa-solid fa-gamepad",
+    "tags": ["3d", "jogos", "motor", "indie", "python"]
   }
 ]
