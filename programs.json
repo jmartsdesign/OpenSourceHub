@@ -462,7 +462,7 @@
 },
 {
   "name": "LuxCoreRender",
-  "category": "Renderizaçã",
+  "category": "Renderização",
   "description": "Renderizador open-source fisicamente baseado que utiliza path tracing e algoritmos avançados para produzir imagens fotorrealistas.",
   "url": "https://github.com/LuxCoreRender/LuxCore",
   "website": "https://luxcorerender.org/",
