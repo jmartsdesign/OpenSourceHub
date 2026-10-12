@@ -485,5 +485,31 @@
   "url": "https://github.com/MakerViking/sindricad",
   "icon": "fa-solid fa-cubes",
   "tags": ["cad", "3d", "paramétrico", "engenharia", "mecânica", "opensource"]
-}
+},
+{
+"name": "OfficeClone®",
+"category": "Produtividade",
+"description": "Suíte Completa de Produtividade Web, CAD, 3D & Design de código aberto.",
+"website": "https://4u.ia.br/app/office/",
+"icon": "fa-solid fa-cube",
+"tags": ["web", "suíte", "produtividade"]
+},
+{
+    "name": "GPSBabel",
+    "category": "GPS",
+    "description": "Convert, upload, download data from GPS and Map programs",
+    "url": "https://github.com/GPSBabel/gpsbabel",
+    "website": "https://www.gpsbabel.org",
+    "icon": "fa-solid fa-location-dot",
+    "tags": ["gps", "mapas", "conversão", "gis"]
+  },
+{
+    "name": "RustGIS",
+    "category": "SIG",
+    "description": "Ferramenta geoespacial e de sistemas de informação geográfica de código aberto desenvolvida em Rust.",
+    "url": "https://github.com/opengeos/RustGIS",
+    "website": "https://web.rustgis.app/",
+    "icon": "fa-solid fa-earth-americas",
+    "tags": ["gis", "rust", "mapas", "geespacial"]
+  }
 ]
