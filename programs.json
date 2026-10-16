@@ -529,5 +529,14 @@
     "website": "https://rangeengine.org",
     "icon": "fa-solid fa-gamepad",
     "tags": ["3d", "jogos", "motor", "indie", "python"]
-  }
+  },
+{
+  "name": "Building Design",
+  "category": "BIM",
+  "description": "Ferramenta open-source de desenho arquitetónico baseada na web, integrada no projeto Puter Everything.",
+  "url": "https://github.com/HeyPuter/everything/tree/main/src/building-design",
+  "website": "https://bd.puter.com/",
+  "icon": "fa-solid fa-building",
+  "tags": ["cad", "arquitetura", "web", "open-source"]
+}
 ]
