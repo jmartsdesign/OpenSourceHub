@@ -547,5 +547,5 @@
   "website": "https://solidcraft.io/",
   "icon": "fa-solid fa-cube",
   "tags": ["cad", "paramétrico", "rust", "3d", "open-source"]
-},
+}
 ]
