@@ -538,5 +538,14 @@
   "website": "https://bd.puter.com/",
   "icon": "fa-solid fa-building",
   "tags": ["cad", "arquitetura", "web", "open-source"]
-}
+},
+{
+  "name": "SolidCraft",
+  "category": "CAD",
+  "description": "CAD paramétrico 3D open-source desenvolvido em Rust, disponível para desktop e web, com suporte para automação através de MCP.",
+  "url": "https://github.com/tangency-labs/solidcraft",
+  "website": "https://solidcraft.io/",
+  "icon": "fa-solid fa-cube",
+  "tags": ["cad", "paramétrico", "rust", "3d", "open-source"]
+},
 ]
