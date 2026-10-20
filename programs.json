@@ -547,5 +547,14 @@
   "website": "https://solidcraft.io/",
   "icon": "fa-solid fa-cube",
   "tags": ["cad", "paramétrico", "rust", "3d", "open-source"]
+},
+{
+  "name": "CadCraft",
+  "category": "CAD/BIM",
+  "description": "Plataforma open-source que reúne ferramentas CAD e BIM de código aberto para arquitetura, engenharia e design.",
+  "url": "https://github.com/getcadcraft",
+  "website": "https://getcadcraft.com/",
+  "icon": "fa-solid fa-cube",
+  "tags": ["cad", "bim", "open-source", "arquitetura", "engenharia"]
 }
 ]
