@@ -590,5 +590,14 @@
   "website": "https://modlumi.com/",
   "icon": "fa-solid fa-cube",
   "tags": ["3d", "modelação", "design", "cad", "open-source"]
+},
+{
+  "name": "TraceDraw",
+  "category": "Design Vetorial",
+  "description": "Editor vetorial open-source executado no navegador, concebido para ilustração, desenho técnico e criação gráfica, constituindo uma alternativa leve ao CorelDRAW.",
+  "url": "https://github.com/igtoth/tracedraw",
+  "website": "https://igtoth.github.io/tracedraw/",
+  "icon": "fa-solid fa-bezier-curve",
+  "tags": ["vetorial", "ilustração", "design gráfico", "coreldraw", "svg", "web"]
 }
 ]
