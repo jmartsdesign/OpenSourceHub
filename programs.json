@@ -582,6 +582,13 @@
   "url": "https://github.com/Rational-Boxes/NoDesk_Reviera",
   "icon": "fa-solid fa-pencil-ruler",
   "tags": ["cad", "desenho técnico", "open-source", "engenharia"]
+},
+{
+  "name": "Modlumi",
+  "category": "3D",
+  "description": "Ferramenta de modelação 3D prática e intuitiva, focada em fluxos de trabalho simples e eficientes para criação de modelos tridimensionais.",
+  "website": "https://modlumi.com/",
+  "icon": "fa-solid fa-cube",
+  "tags": ["3d", "modelação", "design", "cad", "open-source"]
 }
-
 ]
