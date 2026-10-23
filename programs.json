@@ -1,7 +1,7 @@
 [
 {
 "name": "FreeCAD",
-"category": "CAD",
+"category": "CAD/BIM",
 "description": "Modelador paramétrico 3D de código aberto feito primariamente para design de objetos da vida real.",
 "url": "https://github.com/FreeCAD/FreeCAD",
 "website": "https://www.freecad.org",
@@ -556,5 +556,32 @@
   "website": "https://getcadcraft.com/",
   "icon": "fa-solid fa-cube",
   "tags": ["cad", "bim", "open-source", "arquitetura", "engenharia"]
+},
+{
+  "name": "Bonsai BIM",
+  "category": "BIM",
+  "description": "Plataforma OpenBIM de código aberto para modelação, gestão e documentação de projetos BIM baseada em formatos abertos.",
+  "url": "https://github.com/ifcopenshell/ifcopenshell",
+  "website": "https://bonsaibim.org/",
+  "icon": "fa-solid fa-building",
+  "tags": ["bim", "openbim", "ifc", "arquitetura", "engenharia"]
+},
+{
+  "name": "BIMCraft",
+  "category": "BIM",
+  "description": "Plataforma BIM open-source desenvolvida em Rust, inspirada no fluxo de trabalho do Revit e concebida para integração com agentes de IA.",
+  "url": "https://github.com/IPedrax/BIMCraft",
+  "website": "https://getcadcraft.com/use/bimcraft",
+  "icon": "fa-solid fa-cubes",
+  "tags": ["bim", "rust", "open-source", "revit", "aec", "ifc"]
+},
+{
+  "name": "NoDesk Reviera",
+  "category": "BIM",
+  "description": "Aplicação CAD open-source desenvolvida pela Rational Boxes, focada em desenho técnico e modelação com uma abordagem leve e moderna.",
+  "url": "https://github.com/Rational-Boxes/NoDesk_Reviera",
+  "icon": "fa-solid fa-pencil-ruler",
+  "tags": ["cad", "desenho técnico", "open-source", "engenharia"]
 }
+
 ]
