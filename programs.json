@@ -599,5 +599,14 @@
   "website": "https://igtoth.github.io/tracedraw/",
   "icon": "fa-solid fa-bezier-curve",
   "tags": ["vetorial", "ilustração", "design gráfico", "coreldraw", "svg", "web"]
+},
+{
+  "name": "BIMCraft",
+  "category": "BIM",
+  "description": "Projeto open-source de Building Information Modeling desenvolvido em Rust, inspirado no fluxo de trabalho do Revit e concebido para automação por agentes.",
+  "url": "https://github.com/IPedrax/BIMCraft",
+  "website": "https://clonesof.com/bimcraft/",
+  "icon": "fa-solid fa-building-circle-check",
+  "tags": ["bim", "revit", "rust", "aec", "arquitetura", "opensource"]
 }
 ]
