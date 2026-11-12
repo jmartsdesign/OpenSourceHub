@@ -614,7 +614,7 @@
   "category": "BIM",
   "description": "Modelador BIM clássico open-source (MIT, helpware) nativo em IFC, para arquitetos e engenheiros: motor próprio em C#/.NET 10 com kernel B-rep e interface React + three.js em janela Tauri, ao estilo Revit. Módulos de arquitetura, estrutura (cargas e combinações EN 1990), desenho, fases e custos, com scripting Python, nuvens de pontos e loja de extensões.",
   "url": "https://github.com/Ciuntuc-BIM-Studio/lapin",
-  "website": "https://lapin.ciuntucbimstudio.ro/web/",
+  "website": "https://forum.lapinbim.com/",
   "icon": "fa-solid fa-building-circle-check",
   "tags": ["bim", "ifc", "revit", "aec", "arquitetura", "csharp", "typescript", "opensource"]
 },
@@ -635,5 +635,14 @@
   "website": "https://bimriviera.com/",
   "icon": "fa-solid fa-building",
   "tags": ["bim", "aec", "ifc", "arquitetura", "engenharia", "opensource"]
+},
+{
+  "name": "Tequila",
+  "category": "Rendering",
+  "description": "Software open-source (Apache-2.0) de renderização de produtos em Rust para Windows, macOS e Linux, ao estilo KeyShot: importa modelos CAD (STEP, IGES, Rhino, Blender, glTF, FBX, IFC…), aplica materiais reais e iluminação HDRI, e renderiza com Cycles (GPU/CPU) ou path tracer próprio, com o resultado ao vivo no viewport. Inclui editor UV, exportação web/USDZ para AR e automação por agentes via MCP, scripting Python e CLI.",
+  "url": "https://github.com/ifpintac/tequila",
+  "website": "https://ifpintac.github.io/tequila/",
+  "icon": "fa-solid fa-camera",
+  "tags": ["rendering", "3d", "cad", "rust", "cycles", "path-tracing", "mcp", "opensource"]
 }
 ]
