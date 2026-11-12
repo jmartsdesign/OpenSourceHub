@@ -55,7 +55,7 @@
 },
 {
 "name": "IngeTrazo",
-"category": "Arquitetura",
+"category": "AEC",
 "description": "Desenhe como se fosse à mão. Modelador 3D de código aberto para arquitetura, engenharia e design.",
 "url": "https://github.com/ingelibre/ingetrazo",
 "website": "https://ingetrazo.com/en/",
@@ -161,7 +161,7 @@
 },
 {
   "name": "Open AEC Foundation",
-  "category": "BIM",
+  "category": "AEC",
   "description": "Iniciativa open-source dedicada à construção, engenharia e infraestruturas, promovendo soluções abertas para o setor AEC.",
   "url": "https://github.com/OpenAEC-Foundation",
   "website": "https://open-aec.com/",
