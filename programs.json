@@ -186,7 +186,7 @@
 },
 {
   "name": "Kerkythea",
-  "category": "Renderização",
+  "category": "Rendering",
   "description": "Software gratuito de renderização fotorrealista com materiais e iluminação fisicamente precisos para modelos 3D.",
   "website": "https://kerkythea.net/",
   "icon": "fa-solid fa-camera",
@@ -453,7 +453,7 @@
 },
 {
   "name": "Mitsuba 3",
-  "category": "Renderização",
+  "category": "RenderizaçãRenderingo",
   "description": "Renderizador open-source avançado para renderização direta e inversa, utilizado em visualização física, investigação gráfica e simulação de luz.",
   "url": "https://github.com/mitsuba-renderer/mitsuba3",
   "website": "https://www.mitsuba-renderer.org/",
@@ -462,7 +462,7 @@
 },
 {
   "name": "LuxCoreRender",
-  "category": "Renderização",
+  "category": "RRendering",
   "description": "Renderizador open-source fisicamente baseado que utiliza path tracing e algoritmos avançados para produzir imagens fotorrealistas.",
   "url": "https://github.com/LuxCoreRender/LuxCore",
   "website": "https://luxcorerender.org/",
@@ -471,7 +471,7 @@
 },
 {
   "name": "Malt",
-  "category": "Renderização",
+  "category": "Rendering",
   "description": "Motor de renderização open-source não fotorrealista (NPR) integrado com Blender, focado em estilos artísticos, ilustração técnica e produção visual estilizada.",
   "url": "https://github.com/bnpr/Malt",
   "website": "https://malt3d.com/",
@@ -644,5 +644,14 @@
   "website": "https://ifpintac.github.io/tequila/",
   "icon": "fa-solid fa-camera",
   "tags": ["rendering", "3d", "cad", "rust", "cycles", "path-tracing", "mcp", "opensource"]
+},
+{
+  "name": "OpenConstructionERP",
+  "category": "Gestão de Obras",
+  "description": "ERP open-source (AGPL-3.0) para a construção, auto-hospedado: mais de 225 módulos para medições/takeoff em PDF, DWG, RVT e IFC, mapas de quantidades (BOQ), orçamentação com mais de 120 mil itens de custo (incl. SINAPI), cronogramas 4D, modelo de custos 5D, concursos e gestão de obra. Backend Python/FastAPI + frontend React/TypeScript, com API REST, webhooks e IA opcional; instala via pip, Docker ou app desktop.",
+  "url": "https://github.com/datadrivenconstruction/OpenConstructionERP",
+  "website": "https://openconstructionerp.com/pt/",
+  "icon": "fa-solid fa-list-check",
+  "tags": ["erp", "construcao", "boq", "bim", "4d", "5d", "python", "opensource"]
 }
 ]
