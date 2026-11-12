@@ -549,11 +549,11 @@
   "tags": ["cad", "paramétrico", "rust", "3d", "open-source"]
 },
 {
-  "name": "CadCraft",
+  "name": "CadCraftStudio",
   "category": "CAD/BIM",
   "description": "Plataforma open-source que reúne ferramentas CAD e BIM de código aberto para arquitetura, engenharia e design.",
   "url": "https://github.com/getcadcraft",
-  "website": "https://getcadcraft.com/",
+  "website": "https://getcadcraft.com/apps",
   "icon": "fa-solid fa-cube",
   "tags": ["cad", "bim", "open-source", "arquitetura", "engenharia"]
 },
@@ -565,15 +565,6 @@
   "website": "https://bonsaibim.org/",
   "icon": "fa-solid fa-building",
   "tags": ["bim", "openbim", "ifc", "arquitetura", "engenharia"]
-},
-{
-  "name": "BIMCraft",
-  "category": "BIM",
-  "description": "Plataforma BIM open-source desenvolvida em Rust, inspirada no fluxo de trabalho do Revit e concebida para integração com agentes de IA.",
-  "url": "https://github.com/IPedrax/BIMCraft",
-  "website": "https://getcadcraft.com/use/bimcraft",
-  "icon": "fa-solid fa-cubes",
-  "tags": ["bim", "rust", "open-source", "revit", "aec", "ifc"]
 },
 {
   "name": "NoDesk Reviera",
