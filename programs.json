@@ -567,14 +567,6 @@
   "tags": ["bim", "openbim", "ifc", "arquitetura", "engenharia"]
 },
 {
-  "name": "NoDesk Reviera",
-  "category": "BIM",
-  "description": "Aplicação CAD open-source desenvolvida pela Rational Boxes, focada em desenho técnico e modelação com uma abordagem leve e moderna.",
-  "url": "https://github.com/Rational-Boxes/NoDesk_Reviera",
-  "icon": "fa-solid fa-pencil-ruler",
-  "tags": ["cad", "desenho técnico", "open-source", "engenharia"]
-},
-{
   "name": "Modlumi",
   "category": "3D",
   "description": "Ferramenta de modelação 3D prática e intuitiva, focada em fluxos de trabalho simples e eficientes para criação de modelos tridimensionais.",
