@@ -645,5 +645,23 @@
   "website": "https://openconstructionerp.com/pt/",
   "icon": "fa-solid fa-list-check",
   "tags": ["erp", "construcao", "boq", "bim", "4d", "5d", "python", "opensource"]
+},
+{
+  "name": "Engineering on Web",
+  "category": "FEA",
+  "description": "Plataforma online que reúne CAD 3D paramétrico, análise por elementos finitos (FEA), estatística industrial, SCADA e design PCB diretamente no navegador.",
+  "url": "https://engineeringonweb.com/",
+  "website": "https://engineeringonweb.com/fea/app2.php",
+  "icon": "fa-solid fa-gears",
+  "tags": ["cad", "fea", "cfd", "pcb", "scada", "engenharia", "web", "simulação"]
+},
+{
+  "name": "FieldCraft",
+  "category": "FEA",
+  "description": "Plataforma open-source desenvolvida em Rust para modelação paramétrica, malhagem automática, análise estrutural (FEA), transferência térmica e CFD baseado em lattice Boltzmann.",
+  "url": "https://github.com/tangency-labs/fieldcraft",
+  "website": "https://tangency-labs.github.io/fieldcraft/",
+  "icon": "fa-solid fa-wave-square",
+  "tags": ["cae", "fea", "cfd", "simulação", "engenharia", "rust", "malhagem", "opencascade"]
 }
 ]
