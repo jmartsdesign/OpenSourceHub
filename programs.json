@@ -453,7 +453,7 @@
 },
 {
   "name": "Mitsuba 3",
-  "category": "RenderizaçãRenderingo",
+  "category": "Rendering",
   "description": "Renderizador open-source avançado para renderização direta e inversa, utilizado em visualização física, investigação gráfica e simulação de luz.",
   "url": "https://github.com/mitsuba-renderer/mitsuba3",
   "website": "https://www.mitsuba-renderer.org/",
@@ -462,7 +462,7 @@
 },
 {
   "name": "LuxCoreRender",
-  "category": "RRendering",
+  "category": "Rendering",
   "description": "Renderizador open-source fisicamente baseado que utiliza path tracing e algoritmos avançados para produzir imagens fotorrealistas.",
   "url": "https://github.com/LuxCoreRender/LuxCore",
   "website": "https://luxcorerender.org/",
