@@ -663,5 +663,32 @@
   "website": "https://tangency-labs.github.io/fieldcraft/",
   "icon": "fa-solid fa-wave-square",
   "tags": ["cae", "fea", "cfd", "simulação", "engenharia", "rust", "malhagem", "opencascade"]
+},
+{
+  "name": "OpenArchBIM",
+  "category": "BIM",
+  "description": "Software BIM open-source para arquitetos com suporte para paredes, pisos, coberturas, famílias, folhas, mapas de quantidades e IFC, desenvolvido em Rust.",
+  "url": "https://github.com/kristiangl/OpenArchBIM",
+  "website": "https://openarchbim.com/",
+  "icon": "fa-solid fa-building-columns",
+  "tags": ["bim", "ifc", "arquitetura", "rust", "openbim", "aec", "quantidades", "documentação"]
+},
+{
+  "name": "Arch3D",
+  "category": "BIM",
+  "description": "Plataforma BIM open-source leve e rápida desenvolvida em Rust e OpenGL para modelação, visualização e autoria de projetos de arquitetura.",
+  "url": "https://github.com/dsalesarchitect/arch3d",
+  "website": "https://dsalesarchitect.github.io/arch3d/",
+  "icon": "fa-solid fa-cube",
+  "tags": ["bim", "arquitetura", "rust", "opengl", "aec", "modelação", "opensource"]
+},
+{
+  "name": "Hestia",
+  "category": "BIM",
+  "description": "Plataforma BIM open-source baseada no navegador para arquitetura residencial, com renderização acelerada por GPU e núcleo geométrico independente da interface.",
+  "url": "https://github.com/engdennylsonsantos-cloud/Hestia",
+  "website": "https://www.hestiabim.com/",
+  "icon": "fa-solid fa-house-chimney",
+  "tags": ["bim", "web", "arquitetura", "gpu", "rust", "openbim", "residencial", "opensource"]
 }
 ]
