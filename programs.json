@@ -705,7 +705,6 @@
   "category": "Fotogrametria & Reconstrução 3D",
   "description": "Estúdio open-source multiplataforma para Gaussian Splatting que permite importar fotografias e vídeos, alinhar câmaras, treinar modelos com pré-visualização em tempo real e exportar resultados.",
   "url": "https://github.com/fabianfreund/SplatCraft",
-  "website": "https://github.com/fabianfreund/SplatCraft",
   "icon": "fa-solid fa-cloud",
   "tags": ["gaussian splatting", "fotogrametria", "3d", "reconstrução", "point cloud", "nerf", "visualização", "opensource"]
 }
