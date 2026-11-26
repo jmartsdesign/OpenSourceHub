@@ -690,5 +690,23 @@
   "website": "https://www.hestiabim.com/",
   "icon": "fa-solid fa-house-chimney",
   "tags": ["bim", "web", "arquitetura", "gpu", "rust", "openbim", "residencial", "opensource"]
+},
+{
+  "name": "SketchCraft",
+  "category": "3D",
+  "description": "Modelador 3D gratuito que permite desenhar contornos 2D e convertê-los rapidamente em geometria 3D através de operações de extrusão.",
+  "url": "https://github.com/jasonsutter87/sketchcraft",
+  "website": "https://trysketchcraft.com/",
+  "icon": "fa-solid fa-pencil-ruler",
+  "tags": ["3d", "modelação", "cad", "extrusão", "browser", "opensource"]
+},
+{
+  "name": "SplatCraft",
+  "category": "Fotogrametria & Reconstrução 3D",
+  "description": "Estúdio open-source multiplataforma para Gaussian Splatting que permite importar fotografias e vídeos, alinhar câmaras, treinar modelos com pré-visualização em tempo real e exportar resultados.",
+  "url": "https://github.com/fabianfreund/SplatCraft",
+  "website": "https://github.com/fabianfreund/SplatCraft",
+  "icon": "fa-solid fa-cloud",
+  "tags": ["gaussian splatting", "fotogrametria", "3d", "reconstrução", "point cloud", "nerf", "visualização", "opensource"]
 }
 ]
