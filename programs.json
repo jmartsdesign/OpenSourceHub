@@ -725,5 +725,14 @@
   "website": "https://mlightcad.com/cad-viewer/cad-viewer/",
   "icon": "fa-solid fa-compass-drafting",
   "tags": ["cad", "dwg", "dxf", "2d", "desktop", "tauri", "vue", "opensource"]
+},
+{
+  "name": "Picasso Suite",
+  "category": "Vídeo",
+  "description": "Editor de vídeo não linear open-source desenvolvido em Rust, com interface inspirada no DaVinci Resolve, suporte FFmpeg, exportação H.264/H.265 e importação de projetos .drp.",
+  "url": "https://github.com/fabox-os/Picasso-Suite",
+  "website": "https://fabox-os.github.io/Picasso-Suite/",
+  "icon": "fa-solid fa-film",
+  "tags": ["vídeo", "edição", "rust", "ffmpeg", "davinci resolve", "h264", "h265", "opensource"]
 }
 ]
