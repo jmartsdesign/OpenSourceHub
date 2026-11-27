@@ -707,5 +707,23 @@
   "url": "https://github.com/fabianfreund/SplatCraft",
   "icon": "fa-solid fa-cloud",
   "tags": ["gaussian splatting", "fotogrametria", "3d", "reconstrução", "point cloud", "nerf", "visualização", "opensource"]
+},
+{
+  "name": "Chili3D",
+  "category": "CAD",
+  "description": "Software CAD 3D open-source baseado no navegador, com modelação paramétrica, modelação direta e assistência por IA integrada.",
+  "url": "https://github.com/xiangechen/chili3d",
+  "website": "https://chili3d.com/",
+  "icon": "fa-solid fa-cube",
+  "tags": ["cad", "3d", "paramétrico", "ia", "browser", "opencascade", "webassembly", "opensource"]
+},
+{
+  "name": "MLightCAD Studio",
+  "category": "CAD",
+  "description": "Editor e visualizador DWG/DXF offline desenvolvido com Tauri e Vue, com suporte para ficheiros locais, menus nativos e funcionamento multiplataforma.",
+  "url": "https://github.com/mlightcad/mlightcad-studio",
+  "website": "https://mlightcad.com/cad-viewer/cad-viewer/",
+  "icon": "fa-solid fa-compass-drafting",
+  "tags": ["cad", "dwg", "dxf", "2d", "desktop", "tauri", "vue", "opensource"]
 }
 ]
